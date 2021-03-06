@@ -1,9 +1,9 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #88b2aa;">
   <div class="container-md">
-    <a class="navbar-brand" href="#">
-      <%= image_tag "cider-apple-logo.jpg", alt: "logo", class: "logo" %>
-      SiP CiDERY
-    </a>
+    <%= link_to root_path do %>
+      <%= image_tag("cider-apple-logo.jpg", alt: "logo", class: "logo")%>
+    <% end %>
+    <%= link_to "SiP CiDERY", root_path, class: "navbar-brand" %>
     <form class="d-flex">
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-dark" type="submit">Search</button>
