@@ -6,6 +6,7 @@ RSpec.describe "drinks/index", type: :view do
       Drink.create!(
         name: "Drink Name",
         description: "MyText",
+        brewer: "MyBrewer",
         price: 2,
         available: false,
         quantity: 3

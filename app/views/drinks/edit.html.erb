@@ -1,6 +1,9 @@
-<h1>Editing Drink</h1>
-
-<%= render 'form', drink: @drink %>
+<div class="row">
+  <div class="jumbotron col-md-6 offset-md-3 col-sm-4 offset-md-4">
+    <h1>Edit Drink</h1>
+  </div>
+  <%= render 'form', drink: @drink %>
+</div>
 
 <%= link_to 'Show', @drink %> |
 <%= link_to 'Back', drinks_path %>
