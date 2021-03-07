@@ -16,10 +16,26 @@
 
 @import "bootstrap";
 
-.nav-link {
-  color: rgba(0, 0, 0, 0.9);
+:root {
+  --green: #9ed3c9;
+  --dark: #212529;
+  --light: #f7f7f9;
+}
+
+.btn-default {
+  border-width: 2px;
+  border-color: var(--green);
   &:hover {
-    color: rgba(0, 0, 0, 0.9);
+    background-color: var(--green);
+  }
+}
+
+.btn-default-inverse {
+  border-width: 2px;
+  border-color: var(--light);
+  background-color: var(--green);
+  &:hover {
+    border-color: var(--green);
   }
 }
 
@@ -34,5 +50,9 @@
 }
 
 body {
-  background-color: #f7f7f9;
+  background-color: var(--light);
+}
+
+.card {
+  margin-top: 10px;
 }

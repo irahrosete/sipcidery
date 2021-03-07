@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Pages", type: :request do
-  describe "HOMEPAGE" do
+  context "HOMEPAGE" do
     before(:each) do
       get "/"
     end

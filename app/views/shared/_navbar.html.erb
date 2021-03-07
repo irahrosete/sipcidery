@@ -1,17 +1,18 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #88b2aa;">
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+<%# style="background-color: #88b2aa;" %>
   <div class="container-md">
     <%= link_to root_path do %>
-      <%= image_tag("cider-apple-logo.jpg", alt: "logo", class: "logo")%>
+      <%= image_tag "cider-apple-logo.jpg", alt: "logo", class: "logo" %>
     <% end %>
     <%= link_to "SiP CiDERY", root_path, class: "navbar-brand" %>
     <form class="d-flex">
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-dark" type="submit">Search</button>
+      <button class="btn btn-outline-light btn-default" type="submit">Search</button>
     </form>
     <div class="navbar-nav collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <%# <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle" href id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             CiDERS
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -19,12 +20,15 @@
             <li><a class="dropdown-item" href="#">Cidery</a></li>
             <li><a class="dropdown-item" href="#">Origin</a></li>
           </ul>
+        </li> %>
+        <li class="nav-item">
+          <%= link_to "CiDERS", drinks_path, class: "nav-link active" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Sign In</a>
+          <%= link_to "Sign In", drinks_path, class: "nav-link active" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Cart</a>
+          <%= link_to "Cart", drinks_path, class: "nav-link active" %>
         </li>
       </ul>
     </div>
