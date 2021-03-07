@@ -16,10 +16,17 @@
 
 @import "bootstrap";
 
-.nav-link {
-  color: rgba(0, 0, 0, 0.9);
+:root {
+  --green: #88b2aa;
+  --dark: #212529;
+  --light: #f7f7f9;
+}
+
+.btn-default {
+  border-width: 2px;
+  border-color: var(--green);
   &:hover {
-    color: rgba(0, 0, 0, 0.9);
+    background-color: var(--green);
   }
 }
 
@@ -34,5 +41,5 @@
 }
 
 body {
-  background-color: #f7f7f9;
+  background-color: var(--light);
 }
