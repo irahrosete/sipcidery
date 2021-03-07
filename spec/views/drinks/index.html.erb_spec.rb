@@ -4,14 +4,14 @@ RSpec.describe "drinks/index", type: :view do
   before(:each) do
     assign(:drinks, [
       Drink.create!(
-        drink_name: "Drink Name",
+        name: "Drink Name",
         description: "MyText",
         price: 2,
         available: false,
         quantity: 3
       ),
       Drink.create!(
-        drink_name: "Drink Name",
+        name: "Drink Name",
         description: "MyText",
         price: 2,
         available: false,

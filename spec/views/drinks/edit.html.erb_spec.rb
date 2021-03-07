@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "drinks/edit", type: :view do
   before(:each) do
     @drink = assign(:drink, Drink.create!(
-      drink_name: "MyString",
+      name: "MyString",
       description: "MyText",
       price: 1,
       available: false,
@@ -16,7 +16,7 @@ RSpec.describe "drinks/edit", type: :view do
 
     assert_select "form[action=?][method=?]", drink_path(@drink), "post" do
 
-      assert_select "input[name=?]", "drink[drink_name]"
+      assert_select "input[name=?]", "drink[name]"
 
       assert_select "textarea[name=?]", "drink[description]"
 

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "drinks/show", type: :view do
   before(:each) do
     @drink = assign(:drink, Drink.create!(
-      drink_name: "Drink Name",
+      name: "Drink Name",
       description: "MyText",
       price: 2,
       available: false,

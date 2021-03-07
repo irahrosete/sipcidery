@@ -13,11 +13,12 @@
         <div class="card h-100" style="width: 18rem;">
           <%= image_tag "bertie-cider.png", alt: "bertie cider", class: "card-img-top" %>
           <div class="card-body text-white bg-dark">
-            <h3 class="card-title"><%= drink.drink_name%></h3>
+            <h3 class="card-title"><%= drink.name%></h3>
             <h6 class="text-right">Colonial Brewing Co.</h6>
             <p class="card-text text-truncate"><%= drink.description %></p>
             <h5> $<%=drink.price%> </h5>
             <%= link_to 'See More', drink, class: "btn btn-outline-light btn-default" %>
+            <%# <%= link_to 'Destroy', drink, method: :delete, data: { confirm: 'Are you sure?' } %> %>
 
           </div>
           <div class="card-footer">
@@ -50,7 +51,7 @@
     <tbody>
       <% @drinks.each do |drink| %>
         <tr>
-          <td><%= drink.drink_name %></td>
+          <td><%= drink.name %></td>
           <td><%= drink.description %></td>
           <td><%= drink.price %></td>
           <td><%= drink.available %></td>
