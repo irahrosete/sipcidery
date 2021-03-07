@@ -10,7 +10,11 @@
   <% @drinks.each do |drink| %>
     <div class="col mb-4">
       <div class="card h-100" style="width: 18rem;">
-        <%= image_tag "cider-can.jpg", alt: "bertie cider", class: "card-img-top" %>
+        <% if drink.photo.attached? %>
+        <%= image_tag drink.photo, alt: "cider photo", class: "card-img-top" %>
+        <% else %>
+        <%= image_tag "cider-can.jpg", alt: "cider photo", class: "card-img-top" %>
+        <% end %>
         <div class="card-body text-white bg-dark">
           <h3 class="card-title"><%= drink.name%></h3>
           <h6 class="text-right"><%= drink.brewer.name %></h6>
