@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+brewers = ["Hillbilly Cider", "Colonial Brewing Co.", "Bilpin Cider Co.", "Pomologist Cider", "Australian Brewery", "Sydney Brewery", "Darkes Cider", "Wild One"]
+
+
+if Brewer.count == 0
+  brewers.each do |brewer|
+    Brewer.create(name: brewer)
+    puts "created #{brewer}"
+  end
+end
+
+# if User.count == 0
+#   User.create(email: "irah@email.com", password: "123qwe")
+# end

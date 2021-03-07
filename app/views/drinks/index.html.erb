@@ -1,33 +1,31 @@
-<div class="container">
-  <p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 
-  <div class="jumbotron">
-  <h1>CiDERS</h1>
-  <%= link_to 'New Drink', new_drink_path, class: "btn btn-outline-dark btn-default" %>
+<div class="jumbotron">
+<h1>CiDERS</h1>
+<%= link_to 'New Drink', new_drink_path, class: "btn btn-outline-dark btn-default-inverse" %>
 
-  </div>
+</div>
 
-  <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4">
-    <% @drinks.each do |drink| %>
-      <div class="col mb-4">
-        <div class="card h-100" style="width: 18rem;">
-          <%= image_tag "bertie-cider.png", alt: "bertie cider", class: "card-img-top" %>
-          <div class="card-body text-white bg-dark">
-            <h3 class="card-title"><%= drink.name%></h3>
-            <h6 class="text-right">Colonial Brewing Co.</h6>
-            <p class="card-text text-truncate"><%= drink.description %></p>
-            <h5> $<%=drink.price%> </h5>
-            <%= link_to 'See More', drink, class: "btn btn-outline-light btn-default" %>
-            <%# <%= link_to 'Destroy', drink, method: :delete, data: { confirm: 'Are you sure?' } %> %>
+<div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4">
+  <% @drinks.each do |drink| %>
+    <div class="col mb-4">
+      <div class="card h-100" style="width: 18rem;">
+        <%= image_tag "cider-can.jpg", alt: "bertie cider", class: "card-img-top" %>
+        <div class="card-body text-white bg-dark">
+          <h3 class="card-title"><%= drink.name%></h3>
+          <h6 class="text-right"><%= drink.brewer.name %></h6>
+          <p class="card-text text-truncate"><%= drink.description %></p>
+          <h5> $<%=drink.price%> </h5>
+          <%= link_to 'See More', drink, class: "btn btn-outline-light btn-default" %>
+          <%= link_to 'Delete', drink, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-light btn-default" %>
 
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Added <%= time_ago_in_words(drink.created_at) %> ago </small>
-          </div>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Added <%= time_ago_in_words(drink.created_at) %> ago </small>
         </div>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
 
 
