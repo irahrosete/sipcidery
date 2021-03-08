@@ -1,29 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Drink name:</strong>
-  <%= @drink.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @drink.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @drink.price %>
-</p>
-
-<p>
-  <strong>Available:</strong>
-  <%= @drink.available %>
-</p>
-
-<p>
-  <strong>Quantity:</strong>
-  <%= @drink.quantity %>
-</p>
-
-<%= link_to 'Edit', edit_drink_path(@drink) %> |
-<%= link_to 'Back', drinks_path %>
+<div class="row">
+  <div class="jumbotron col-md-6 offset-md-3 col-sm-4 offset-sm-4">
+    <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4">
+      <div class="col mb-4">
+        <div class="card h-100" style="width: 25rem;">
+          <% if @drink.photo.attached? %>
+          <%= image_tag @drink.photo, alt: "cider photo", class: "img-thumbnail card-img-top" %>
+          <% else %>
+          <%= image_tag "cider-can.jpg", alt: "cider photo", class: "img-thumbnail card-img-top" %>
+          <% end %>
+          <div class="card-body text-white bg-dark">
+            <h3 class="card-title"><%= @drink.name%></h3>
+            <h6 class="text-right"><%= @drink.brewer.name %></h6>
+            <p class="card-text"><%= @drink.description %></p>
+            <p class="card-text">Available: <%= @drink.available %> | Quantity: <%= @drink.quantity %></p>
+            <h5> $<%= @drink.price%> </h5>
+            <%= link_to 'Buy Now', drinks_path, class: "btn btn-outline-light btn-default" %>
+            <%= link_to 'Edit', edit_drink_path(@drink), class: "btn btn-outline-light btn-default" %>
+            <%= link_to 'Delete', drinks_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-light btn-default" %>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Added <%= time_ago_in_words(@drink.created_at) %> ago </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
