@@ -1,4 +1,4 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #132432">
 <%# style="background-color: #88b2aa;" %>
   <div class="container-md">
     <%= link_to root_path do %>
@@ -9,30 +9,30 @@
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-light btn-default" type="submit">Search</button>
     </form>
-    <div class="navbar-nav collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-      <ul class="nav">
-        <%# <li class="nav-item dropdown">
-          <a class="nav-link active dropdown-toggle" href id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            CiDERS
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Style</a></li>
-            <li><a class="dropdown-item" href="#">Cidery</a></li>
-            <li><a class="dropdown-item" href="#">Origin</a></li>
-          </ul>
-        </li> %>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDarkDropdown">
+      <ul class="navbar-nav">
         <li class="nav-item">
           <%= link_to "CiDERs", drinks_path, class: "nav-link active" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "Sign In", drinks_path, class: "nav-link active" %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= fa_icon "user-circle" %>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+            <%= link_to "Sign In", new_user_session_path, class: "dropdown-item" %>
+            <li><a class="dropdown-item" href="#">Add Your CiDERY</a></li>
+            <li><a class="dropdown-item" href="#">Payout Method</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Sign Out</a></li>
+          </ul>
         </li>
         <li class="nav-item">
           <%= link_to "Cart", drinks_path, class: "nav-link active" %>
+          <%# <i class="fas fa-shopping-basket"></i> %>
         </li>
       </ul>
     </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     </div>
