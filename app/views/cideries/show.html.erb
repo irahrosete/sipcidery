@@ -18,13 +18,10 @@
             <%= link_to 'Back', :back, class: "btn btn-outline-light btn-default" %>
             <%= link_to 'Edit', edit_cidery_path(@cidery), class: "btn btn-outline-light btn-default" %>
             <%# if current_user && current_user.id == @drink.user_id %>
-            <%= link_to 'Delete', cideries_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-light btn-default" %>
+            <%= link_to 'Delete', cidery_path(params[:id]), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-light btn-default" %>
             <%# if current_user && current_user.id == @drink.user_id %>
             <%= link_to 'New CiDER', new_drink_path, class: "btn btn-outline-dark btn-default-inverse" %>
 
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Added <%= time_ago_in_words(@cidery.created_at) %> ago </small>
           </div>
         </div>
       </div>

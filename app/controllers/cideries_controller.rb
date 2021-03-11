@@ -24,7 +24,7 @@ class CideriesController < ApplicationController
   def create
     @cidery = Cidery.new(cidery_params)
     if @cidery.save
-      render :show, notice: "Cidery was successfully created."
+      redirect_to :show, notice: "Cidery was successfully created."
       # redirect_to @cidery, notice: "Cidery was successfully created."
     else
       render :new, status: :unprocessable_entity
@@ -42,8 +42,9 @@ class CideriesController < ApplicationController
 
   # DELETE /cideries/1
   def destroy
+    @cidery = Cidery.find(params[:id])
     @cidery.destroy
-      redirect_to cideries_url, notice: "Cidery was successfully deleted."
+    redirect_to cideries_url, notice: "Cidery was successfully deleted."
   end
 
   private
