@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_10_145908) do
+ActiveRecord::Schema.define(version: 2021_03_11_024931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2021_03_10_145908) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "brewers", force: :cascade do |t|
+  create_table "cideries", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.string "email"
@@ -60,7 +60,9 @@ ActiveRecord::Schema.define(version: 2021_03_10_145908) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "brewer_id", null: false
+    t.bigint "cidery_id", null: false
     t.index ["brewer_id"], name: "index_drinks_on_brewer_id"
+    t.index ["cidery_id"], name: "index_drinks_on_cidery_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -79,5 +81,6 @@ ActiveRecord::Schema.define(version: 2021_03_10_145908) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "drinks", "brewers"
+  add_foreign_key "drinks", "cideries"
+  add_foreign_key "drinks", "cideries", column: "brewer_id"
 end

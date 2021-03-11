@@ -6,13 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# brewers = ["The Apple Thief", "Hillbilly Cider", "Colonial Brewing Co.", "Bilpin Cider Co.", "Pomologist Cider", "Australian Brewery", "Sydney Brewery", "Darkes Cider", "Wild One", "Willie Smith's"]
-brewers = ["The Apple Thief"]
+# cideries = ["The Apple Thief", "Hillbilly Cider", "Colonial Brewing Co.", "Bilpin Cider Co.", "Pomologist Cider", "Australian Brewery", "Sydney Brewery", "Darkes Cider", "Wild One", "Willie Smith's"]
+cideries = ["The Apple Thief"]
 
-# if Brewer.count == 0
-  brewers.each do |brewer|
-    Brewer.create(name: brewer)
-    puts "created #{brewer}"
+# if Cidery.count == 0
+  cideries.each do |cidery|
+    Cidery.create(name: cidery)
+    puts "created #{cidery}"
   end
 # end
 

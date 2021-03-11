@@ -1,4 +1,4 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #132432">
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark">
 <%# style="background-color: #88b2aa;" %>
   <div class="container-md">
     <%= link_to root_path do %>
@@ -24,7 +24,9 @@
               <li><a class="dropdown-item" href="#">Payout Method</a></li>
             <% else %>
               <%= link_to "Sign In", new_user_session_path, class: "dropdown-item" %>
-              <li><a class="dropdown-item" href="#">Add Your CiDERY</a></li>
+              <%= link_to "Add Your CiDERY", new_cidery_path, class: "dropdown-item" %>
+
+              <%# <li><a class="dropdown-item" href="#">Add Your CiDERY</a></li> %>
             <% end %>
             <% if user_signed_in? %>
               <li><hr class="dropdown-divider"></li>
@@ -33,8 +35,9 @@
           </ul>
         </li>
         <li class="nav-item">
-          <%= link_to "Cart", drinks_path, class: "nav-link active" %>
-          <%# <i class="fas fa-shopping-basket"></i> %>
+          <%= link_to drinks_path, class: "nav-link" do %>
+            <%= fa_icon "shopping-basket" %>
+          <% end %>
         </li>
       </ul>
     </div>

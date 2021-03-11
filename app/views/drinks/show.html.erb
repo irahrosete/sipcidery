@@ -12,7 +12,7 @@
           <% end %>
           <div class="card-body text-white bg-dark">
             <h3 class="card-title"><%= @drink.name%></h3>
-            <h6 class="text-right"><%= @drink.brewer.name %></h6>
+            <h6 class="text-right"><%= @drink.cidery.name %></h6>
             <p class="card-text"><%= @drink.description %></p>
             <p class="card-text">Available: <%= @drink.available %> | Quantity: <%= @drink.quantity %></p>
             <h5> $<%= @drink.price%> </h5>

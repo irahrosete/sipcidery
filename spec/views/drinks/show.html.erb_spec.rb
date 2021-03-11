@@ -5,7 +5,7 @@ RSpec.describe "drinks/show", type: :view do
     @drink = assign(:drink, Drink.create!(
       name: "Drink Name",
       description: "MyText",
-      brewer: "MyBrewer",
+      cidery: "MyCidery",
       price: 2,
       available: false,
       quantity: 3
