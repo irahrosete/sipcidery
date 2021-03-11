@@ -6,12 +6,10 @@
       <div class="col mb-4">
         <div class="card h-100" style="width: 25rem;">
 
-          <% if false %>
           <% if @cidery.logo.attached? %>
           <%= image_tag @cidery.logo, alt: "cider logo", class: "img-thumbnail card-img-top" %>
           <% else %>
           <%= image_tag "cider-can.jpg", alt: "cider logo", class: "img-thumbnail card-img-top" %>
-          <% end %>
           <% end %>
 
           <div class="card-body text-white bg-dark">
@@ -22,6 +20,8 @@
             <%# if current_user && current_user.id == @drink.user_id %>
             <%= link_to 'Delete', cideries_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-light btn-default" %>
             <%# if current_user && current_user.id == @drink.user_id %>
+            <%= link_to 'New CiDER', new_drink_path, class: "btn btn-outline-dark btn-default-inverse" %>
+
           </div>
           <div class="card-footer">
             <small class="text-muted">Added <%= time_ago_in_words(@cidery.created_at) %> ago </small>
