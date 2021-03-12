@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <div class="jumbotron">
+
 <h1>[Cidery]</h1>
 <%= link_to 'New CiDER', new_drink_path, class: "btn btn-outline-dark btn-default-inverse" %>
+<%# if current_user && current_user.id == @drink.user_id %>
 
 </div>
 
@@ -17,12 +19,10 @@
         <% end %>
         <div class="card-body text-white bg-dark">
           <h3 class="card-title"><%= drink.name%></h3>
-          <h6 class="text-right"><%= drink.brewer.name %></h6>
+          <h6 class="text-right"><%= drink.cidery.name %></h6>
           <p class="card-text text-truncate"><%= drink.description %></p>
           <h5> $<%= drink.price%> </h5>
           <%= link_to 'See More', drink, class: "btn btn-outline-light btn-default" %>
-          <%= link_to 'Delete', drink, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-light btn-default" %>
-
         </div>
         <div class="card-footer">
           <small class="text-muted">Added <%= time_ago_in_words(drink.created_at) %> ago </small>

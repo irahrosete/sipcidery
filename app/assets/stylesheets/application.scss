@@ -12,9 +12,11 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
 
 @import "bootstrap";
+@import "font-awesome";
 
 :root {
   --green: #9ed3c9;
@@ -49,10 +51,30 @@
   font-size: 2.5rem;
 }
 
+.navbar-nav {
+  font-family: 'Saira', sans-serif;
+  font-size: 1.1rem;
+}
+
+.navbar-dark {
+  background-color: #212529;
+}
+
+.dropdown-item {
+  font-family: 'Saira', sans-serif;
+  font-size: 1.1rem;
+}
+
 body {
   background-color: var(--light);
+  font-family: 'Saira', sans-serif;
+
 }
 
 .card {
   margin-top: 10px;
+}
+
+.card-text {
+  font-family: 'Saira', sans-serif;
 }

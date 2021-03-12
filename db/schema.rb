@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_07_111238) do
+ActiveRecord::Schema.define(version: 2021_03_11_024931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2021_03_07_111238) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "brewers", force: :cascade do |t|
+  create_table "cideries", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.string "email"
@@ -59,11 +59,25 @@ ActiveRecord::Schema.define(version: 2021_03_07_111238) do
     t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "brewer_id", null: false
-    t.index ["brewer_id"], name: "index_drinks_on_brewer_id"
+    t.bigint "cidery_id", null: false
+    t.index ["cidery_id"], name: "index_drinks_on_cidery_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "drinks", "brewers"
+  add_foreign_key "drinks", "cideries", column: "cidery_id"
 end
