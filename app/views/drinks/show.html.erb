@@ -18,10 +18,10 @@
             <h5> $<%= @drink.price%> </h5>
             <%= link_to 'Back', :back, class: "btn btn-outline-light btn-default" %>
             <%= link_to 'Buy Now', drinks_path, class: "btn btn-outline-light btn-default" %>
-            <% if current_user && current_user.id == @drink.user_id %>
-              <%= link_to 'Edit', edit_drink_path(@drink), class: "btn btn-outline-light btn-default" %>
-              <%= link_to 'Delete', drink_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-light btn-default" %>
-            <% end %>
+            <%# if current_user && current_user.id == @drink.user_id %>
+              <%= link_to 'Edit', edit_drink_path(@drink), class: "btn btn-outline-light btn-default" if can? :update, @drink %>
+              <%= link_to 'Delete', drink_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-light btn-default" if can? :destroy, @drink %>
+            <%# end %>
           </div>
           <div class="card-footer">
             <small class="text-muted">Added <%= time_ago_in_words(@drink.created_at) %> ago </small>

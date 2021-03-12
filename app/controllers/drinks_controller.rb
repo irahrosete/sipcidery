@@ -1,7 +1,7 @@
 class DrinksController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
   before_action :set_drink, only: %i[ show edit update destroy ]
-  # load_and_authorize_resource
+  load_and_authorize_resource
 
   # GET /drinks or /drinks.json
   def index
