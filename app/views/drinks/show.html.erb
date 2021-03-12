@@ -6,9 +6,9 @@
       <div class="col mb-4">
         <div class="card h-100" style="width: 25rem;">
           <% if @drink.photo.attached? %>
-          <%= image_tag @drink.photo, alt: "cider photo", class: "img-thumbnail card-img-top" %>
+            <%= image_tag @drink.photo, alt: "cider photo", class: "img-thumbnail card-img-top" %>
           <% else %>
-          <%= image_tag "cider-can.jpg", alt: "cider photo", class: "img-thumbnail card-img-top" %>
+            <%= image_tag "cider-can.jpg", alt: "cider photo", class: "img-thumbnail card-img-top" %>
           <% end %>
           <div class="card-body text-white bg-dark">
             <h3 class="card-title"><%= @drink.name%></h3>
@@ -18,10 +18,10 @@
             <h5> $<%= @drink.price%> </h5>
             <%= link_to 'Back', :back, class: "btn btn-outline-light btn-default" %>
             <%= link_to 'Buy Now', drinks_path, class: "btn btn-outline-light btn-default" %>
-            <%= link_to 'Edit', edit_drink_path(@drink), class: "btn btn-outline-light btn-default" %>
-            <%# if current_user && current_user.id == @drink.user_id %>
-            <%= link_to 'Delete', drink_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-light btn-default" %>
-            <%# if current_user && current_user.id == @drink.user_id %>
+            <% if current_user && current_user.id == @drink.user_id %>
+              <%= link_to 'Edit', edit_drink_path(@drink), class: "btn btn-outline-light btn-default" %>
+              <%= link_to 'Delete', drink_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-light btn-default" %>
+            <% end %>
           </div>
           <div class="card-footer">
             <small class="text-muted">Added <%= time_ago_in_words(@drink.created_at) %> ago </small>

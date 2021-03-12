@@ -1,6 +1,7 @@
 class DrinksController < ApplicationController
-  # before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!, except: [:show, :index]
   before_action :set_drink, only: %i[ show edit update destroy ]
+  # load_and_authorize_resource
 
   # GET /drinks or /drinks.json
   def index
@@ -23,6 +24,7 @@ class DrinksController < ApplicationController
   # POST /drinks or /drinks.json
   def create
     @drink = Drink.new(drink_params)
+    @drink.user_id = current_user.id
     if @drink.save
       redirect_to @drink, notice: "Drink was successfully created."
     else
