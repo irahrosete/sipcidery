@@ -9,9 +9,8 @@
           <% if @cidery.logo.attached? %>
           <%= image_tag @cidery.logo, alt: "cider logo", class: "img-thumbnail card-img-top" %>
           <% else %>
-          <%= image_tag "cider-can.jpg", alt: "cider logo", class: "img-thumbnail card-img-top" %>
+          <%= image_tag "cidery-logo.jpg", alt: "cider logo", class: "img-thumbnail card-img-top" %>
           <% end %>
-
           <div class="card-body text-white bg-dark">
             <h3 class="card-title"><%= @cidery.name%></h3>
             <p class="card-text"><%= @cidery.description %></p>
@@ -21,10 +20,7 @@
             <%= link_to 'Delete', cidery_path(params[:id]), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-light btn-default" %>
             <%# if current_user && current_user.id == @drink.user_id %>
             <%= link_to 'New CiDER', new_drink_path, class: "btn btn-outline-dark btn-default-inverse" %>
-
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>

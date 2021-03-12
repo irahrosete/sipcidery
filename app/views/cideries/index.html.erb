@@ -20,7 +20,7 @@
         <div class="card-body text-white bg-dark">
           <h3 class="card-title"><%= cidery.name%></h3>
           <p class="card-text text-truncate"><%= cidery.description %></p>
-          <h5> $<%= cidery.drinks.count%> </h5>
+          <h5> <%= cidery.drinks.count%> CiDER(s)</h5>
           <%= link_to 'See More', cidery, class: "btn btn-outline-light btn-default" %>
         </div>
         <div class="card-footer">
