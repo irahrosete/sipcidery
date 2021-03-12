@@ -24,3 +24,8 @@
         </div>
       </div>
     </div>
+
+    <% @cidery.drinks.each do |drink| %>
+      <h3><%= drink.name %></h3>
+      <p><%= drink.description %></p>
+    <% end %>

@@ -9,6 +9,7 @@ class CideriesController < ApplicationController
 
   # GET /cideries/1
   def show
+    # raise
   end
 
   # GET /cideries/new
