@@ -41,6 +41,7 @@ class DrinksController < ApplicationController
 
   # DELETE /drinks/1 or /drinks/1.json
   def destroy
+    # @drink = Drink.find(params[:id])
     @drink.destroy
       redirect_to drinks_url, notice: "Drink was successfully deleted."
   end

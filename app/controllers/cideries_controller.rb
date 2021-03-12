@@ -4,7 +4,7 @@ class CideriesController < ApplicationController
 
   # GET /cideries
   def index
-    @cidery = Cidery.all
+    @cideries = Cidery.all
   end
 
   # GET /cideries/1
@@ -24,7 +24,7 @@ class CideriesController < ApplicationController
   def create
     @cidery = Cidery.new(cidery_params)
     if @cidery.save
-      redirect_to :show, notice: "Cidery was successfully created."
+      redirect_to @cidery, notice: "Cidery was successfully created."
       # redirect_to @cidery, notice: "Cidery was successfully created."
     else
       render :new, status: :unprocessable_entity

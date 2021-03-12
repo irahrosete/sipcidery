@@ -23,8 +23,6 @@
           <p class="card-text text-truncate"><%= drink.description %></p>
           <h5> $<%= drink.price%> </h5>
           <%= link_to 'See More', drink, class: "btn btn-outline-light btn-default" %>
-          <%= link_to 'Delete', drink, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-light btn-default" %>
-
         </div>
         <div class="card-footer">
           <small class="text-muted">Added <%= time_ago_in_words(drink.created_at) %> ago </small>
