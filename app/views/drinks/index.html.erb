@@ -1,11 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="jumbotron">
-
-<h1>[Cidery]</h1>
-<%= link_to 'New CiDER', new_drink_path, class: "btn btn-outline-dark btn-default-inverse" %>
-<%# if current_user && current_user.id == @drink.user_id %>
-
+  <h1>CiDERs</h1>
 </div>
 
 <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4">
@@ -13,9 +9,9 @@
     <div class="col mb-4">
       <div class="card h-100" style="width: 18rem;">
         <% if drink.photo.attached? %>
-        <%= image_tag drink.photo, alt: "cider photo", class: "img-thumbnail card-img-top" %>
+          <%= image_tag drink.photo, alt: "cider photo", class: "img-thumbnail card-img-top" %>
         <% else %>
-        <%= image_tag "cider-can.jpg", alt: "cider photo", class: "img-thumbnail card-img-top" %>
+          <%= image_tag "cider-can.jpg", alt: "cider photo", class: "img-thumbnail card-img-top" %>
         <% end %>
         <div class="card-body text-white bg-dark">
           <h3 class="card-title"><%= drink.name%></h3>
