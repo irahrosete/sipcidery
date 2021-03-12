@@ -4,7 +4,7 @@
 
 <h1>CiDERies</h1>
 <%# if current_user && current_user.id == @drink.user_id %>
-<%= link_to 'New CiDERY', new_cidery_path, class: "btn btn-outline-dark btn-default-inverse" %>
+<%= link_to 'New CiDERY', new_cidery_path, class: "btn btn-outline-dark btn-default-inverse" if can? :create, @cidery %>
 <%# end %>
 </div>
 

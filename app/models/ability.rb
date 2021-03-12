@@ -6,8 +6,14 @@ class Ability
   def initialize(user)
     # Define abilities for the passed in user here. For example:
     #
-      # user ||= User.new # guest user (not logged in)
-      # can :manage, Drink, user_id: user.id
+      user ||= User.new # guest user (not logged in)
+      can :manage, Drink, user_id: user.id
+      can :manage, Drink if user.rep?
+
+      can :manage, Cidery if user.super?
+      can [:read, :create], Drink
+      can :manage, :all if user.super?
+
     #   if user.admin?
     #     can :manage, :all
     #   else
@@ -31,5 +37,6 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
+
   end
 end
