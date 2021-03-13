@@ -59,8 +59,10 @@ ActiveRecord::Schema.define(version: 2021_03_12_135808) do
     t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "brewer_id", null: false
     t.bigint "cidery_id", null: false
     t.bigint "user_id", null: false
+    t.index ["brewer_id"], name: "index_drinks_on_brewer_id"
     t.index ["cidery_id"], name: "index_drinks_on_cidery_id"
     t.index ["user_id"], name: "index_drinks_on_user_id"
   end
@@ -83,5 +85,6 @@ ActiveRecord::Schema.define(version: 2021_03_12_135808) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "drinks", "cideries"
+  add_foreign_key "drinks", "cideries", column: "brewer_id"
   add_foreign_key "drinks", "users"
 end
