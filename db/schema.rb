@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 2021_03_13_135700) do
     t.string "first_name"
     t.string "last_name"
     t.integer "role", default: 0
-    t.bigint "cidery_id", default: 1
+    t.bigint "cidery_id"
     t.index ["cidery_id"], name: "index_users_on_cidery_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

@@ -10,6 +10,7 @@ class DrinksController < ApplicationController
 
   # GET /drinks/1
   def show
+
   end
 
   # GET /drinks/new
