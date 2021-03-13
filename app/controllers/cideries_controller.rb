@@ -1,6 +1,7 @@
 class CideriesController < ApplicationController
-  # before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!, except: [:show, :index]
   before_action :set_cidery, only: %i[ show edit update destroy ]
+  load_and_authorize_resource
 
   # GET /cideries
   def index
@@ -9,7 +10,6 @@ class CideriesController < ApplicationController
 
   # GET /cideries/1
   def show
-    # raise
   end
 
   # GET /cideries/new
@@ -24,6 +24,7 @@ class CideriesController < ApplicationController
   # POST /cideries
   def create
     @cidery = Cidery.new(cidery_params)
+    @cidery.id = current_user.cidery_id
     if @cidery.save
       redirect_to @cidery, notice: "Cidery was successfully created."
       # redirect_to @cidery, notice: "Cidery was successfully created."
@@ -57,6 +58,6 @@ class CideriesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def cidery_params
-    params.require(:cidery).permit(:name, :description, :logo, :email, :origin_id)
+    params.require(:cidery).permit(:name, :description, :logo, :email, :user_id)
   end
 end

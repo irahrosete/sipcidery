@@ -3,12 +3,12 @@ class DrinksController < ApplicationController
   before_action :set_drink, only: %i[ show edit update destroy ]
   load_and_authorize_resource
 
-  # GET /drinks or /drinks.json
+  # GET /drinks
   def index
     @drinks = Drink.all
   end
 
-  # GET /drinks/1 or /drinks/1.json
+  # GET /drinks/1
   def show
   end
 
@@ -21,10 +21,10 @@ class DrinksController < ApplicationController
   def edit
   end
 
-  # POST /drinks or /drinks.json
+  # POST /drinks
   def create
     @drink = Drink.new(drink_params)
-    @drink.user_id = current_user.id
+    # @drink.user_id = current_user.id
     if @drink.save
       redirect_to @drink, notice: "Drink was successfully created."
     else
@@ -32,7 +32,7 @@ class DrinksController < ApplicationController
     end
   end
 
-  # PATCH/PUT /drinks/1 or /drinks/1.json
+  # PATCH/PUT /drinks/1
   def update
     if @drink.update(drink_params)
       redirect_to @drink, notice: "Drink was successfully updated."
@@ -41,7 +41,7 @@ class DrinksController < ApplicationController
     end
   end
 
-  # DELETE /drinks/1 or /drinks/1.json
+  # DELETE /drinks/1
   def destroy
     # @drink = Drink.find(params[:id])
     @drink.destroy

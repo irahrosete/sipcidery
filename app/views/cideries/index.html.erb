@@ -3,13 +3,12 @@
 <div class="jumbotron">
 
 <h1>CiDERies</h1>
-<%# if current_user && current_user.id == @drink.user_id %>
-<%= link_to 'New CiDERY', new_cidery_path, class: "btn btn-outline-dark btn-default-inverse" if can? :create, @cidery %>
-<%# end %>
+  <%= link_to 'New CiDERY', new_cidery_path, class: "btn btn-outline-dark btn-default-inverse" if can? :create, @cidery %>
 </div>
 
 <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4">
   <% @cideries.each do |cidery| %>
+  <% if cidery.id > 1 %>
     <div class="col mb-4">
       <div class="card h-100" style="width: 18rem;">
         <% if cidery.logo.attached? %>
@@ -28,5 +27,6 @@
         </div>
       </div>
     </div>
+    <% end %>
   <% end %>
 </div>
