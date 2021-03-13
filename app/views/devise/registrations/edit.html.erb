@@ -12,6 +12,8 @@
                 required: true,
                 input_html: { autocomplete: "last_name" }%>
     <%= f.input :email, required: true %>
+    <%= f.input :cidery, collection: Cidery.order(:name), label_method: :name, prompt: "Choose a Cidery" if current_user.role == 'super' %>
+
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>

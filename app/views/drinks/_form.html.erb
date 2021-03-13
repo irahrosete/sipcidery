@@ -6,7 +6,7 @@
     <div class="form-inputs">
       <%= f.input :name %>
       <%= f.input :description %>
-      <%= f.association :cidery %>
+      <%= f.association :cidery, collection: Cidery.where("id != 1").order(:name), label_method: :name, prompt: "Choose a Cidery" %>
       <%= f.input :price %>
       <%= f.input :available %>
       <%= f.input :quantity %>

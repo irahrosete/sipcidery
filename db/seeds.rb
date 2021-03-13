@@ -7,15 +7,27 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # cideries = ["The Apple Thief", "Hillbilly Cider", "Colonial Brewing Co.", "Bilpin Cider Co.", "Pomologist Cider", "Australian Brewery", "Sydney Brewery", "Darkes Cider", "Wild One", "Willie Smith's"]
-# cideries = ["The Apple Thief"]
+cideries = [
+  {name: 'NO CIDERY', description: 'dummy cidery', email: 'nocidery@email.com'}
+]
 
-# if Cidery.count == 0
-  # cideries.each do |cidery|
-  #   Cidery.create(name: cidery)
-  #   puts "created #{cidery}"
-  # end
-# end
+if Cidery.count == 0
+  cideries.each do |cidery|
+    Cidery.create(cidery)
+    puts 'created default cidery'
+  end
+end
 
-# if User.count == 0
-#   User.create(email: "irah@email.com", password: "123qwe")
-# end
+users = [
+  {first_name: 'i', last_name: 'x', email: 'sipcidery@gmail.com', password: '123qwe', role: 'super'},
+  # {first_name: 'rep1', last_name: 'y', email: 'theapplethief1@gmail.com', password: '123qwe', role: 'rep'},
+  # {first_name: 'rep2', last_name: 'y', email: 'theapplethief2@gmail.com', password: '123qwe', role: 'rep'},
+  {first_name: 'norman', last_name: 'z', email: 'drinknorman@gmail.com', password: '123qwe'}
+]
+
+if User.count == 0
+  users.each do |user|
+    User.create(users)
+  end
+  puts 'created default users'
+end
