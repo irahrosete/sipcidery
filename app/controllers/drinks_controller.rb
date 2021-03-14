@@ -1,5 +1,5 @@
 class DrinksController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!, except: [:show, :index, :random]
   before_action :set_drink, only: %i[ show edit update destroy ]
   load_and_authorize_resource
 
@@ -11,7 +11,11 @@ class DrinksController < ApplicationController
 
   # GET /drinks/1
   def show
+  end
 
+  def random
+    @drink = Drink.offset(rand(Drink.count)).first
+    authorize! :random, @drink
   end
 
   # GET /drinks/new
@@ -26,7 +30,6 @@ class DrinksController < ApplicationController
   # POST /drinks
   def create
     @drink = Drink.new(drink_params)
-    # @drink.user_id = current_user.id
     if @drink.save
       redirect_to @drink, notice: "Drink was successfully created."
     else

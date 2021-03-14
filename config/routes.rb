@@ -6,9 +6,14 @@ Rails.application.routes.draw do
 
       root to: "users#index"
     end
+
   devise_for :users
+  devise_scope :user do
+      get '/users/sign_out' => 'devise/sessions#destroy'
+  end
   root to: "pages#index"
   resources :drinks
   resources :cideries
+  get "/random", to: "drinks#random"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
