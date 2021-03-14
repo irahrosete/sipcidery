@@ -18,18 +18,18 @@
           <%= link_to "CiDERs", drinks_path, class: "nav-link active btn" %>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle btn" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= current_user.first_name if user_signed_in? %>
             <%= fa_icon "user-circle" %>
           </a>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
             <% if user_signed_in? %>
+              <%= link_to "Manage Users", admin_root_path, class: "dropdown-item" if can? :manage, @user %>
               <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
-              <li><a class="dropdown-item" href="#">Payout Method</a></li>
+              <%= link_to "Payout Method", new_cidery_path, class: "dropdown-item" %>
             <% else %>
               <%= link_to "Sign In", new_user_session_path, class: "dropdown-item" %>
               <%= link_to "Add Your CiDERY", new_cidery_path, class: "dropdown-item" %>
-
-              <%# <li><a class="dropdown-item" href="#">Add Your CiDERY</a></li> %>
             <% end %>
             <% if user_signed_in? %>
               <li><hr class="dropdown-divider"></li>
@@ -38,7 +38,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <%= link_to drinks_path, class: "nav-link" do %>
+          <%= link_to drinks_path, class: "btn nav-link" do %>
             <%= fa_icon "shopping-basket" %>
           <% end %>
         </li>
