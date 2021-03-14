@@ -8,7 +8,7 @@
 
 <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4">
   <% @cideries.each do |cidery| %>
-  <%# if cidery.id > 0 %>
+  <% if cidery.id > 0 %>
     <div class="col mb-4">
       <div class="card h-100" style="width: 18rem;">
         <% if cidery.logo.attached? %>
@@ -27,6 +27,6 @@
         </div>
       </div>
     </div>
-    <%# end %>
+    <% end %>
   <% end %>
 </div>
