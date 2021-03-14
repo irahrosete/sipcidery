@@ -5,7 +5,8 @@ class DrinksController < ApplicationController
 
   # GET /drinks
   def index
-    @drinks = Drink.all
+    # @drinks = Drink.all
+    @drinks = Drink.search(params[:search])
   end
 
   # GET /drinks/1
