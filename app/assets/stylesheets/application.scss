@@ -61,7 +61,7 @@
 }
 
 .navbar-dark {
-  background-color: #212529;
+  background-color: var(--dark);
 }
 
 .dropdown-item {
@@ -80,4 +80,12 @@ body {
 
 .card-text {
   font-family: 'Saira', sans-serif;
+}
+
+.bg-dark {
+  background-color: var(--dark);
+}
+
+.card-link {
+  text-decoration: none;
 }
