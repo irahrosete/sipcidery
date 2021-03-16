@@ -18,7 +18,7 @@
         <li class="nav-item">
           <%= link_to "CiDERs", drinks_path, class: "nav-link active btn" %>
         </li>
-        <li class="nav-item dropdown" data-turbolinks="false">
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle btn" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <%= current_user.first_name if user_signed_in? %>
             <%= fa_icon "user-circle" %>
@@ -27,14 +27,15 @@
             <% if user_signed_in? %>
               <%= link_to "Manage Users", admin_root_path, class: "dropdown-item" if can? :manage, @user %>
               <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
-              <%= link_to "Payout Method", new_cidery_path, class: "dropdown-item" %>
-            <% else %>
-              <%= link_to "Sign In", new_user_session_path, class: "dropdown-item" %>
-              <%= link_to "Add Your CiDERY", new_cidery_path, class: "dropdown-item" %>
-            <% end %>
-            <% if user_signed_in? %>
+              <%= link_to "Saved CiDERs", saved_path, class: "dropdown-item" if current_user.role == "normal" %>
               <li><hr class="dropdown-divider"></li>
               <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <% else %>
+              <%= link_to "Sign In", new_user_session_path, class: "dropdown-item" %>
+              <%= link_to "Add Your CiDERY", contact_path, class: "dropdown-item" %>
+            <% end %>
+            <% if user_signed_in? %>
+
             <% end %>
           </ul>
         </li>

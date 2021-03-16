@@ -260,7 +260,7 @@ GEM
       actionpack (>= 5.2)
       activemodel (>= 5.2)
     spring (2.1.1)
-    sprockets (4.0.2)
+    sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-rails (3.2.2)
@@ -323,6 +323,7 @@ DEPENDENCIES
   selenium-webdriver
   simple_form
   spring
+  sprockets (= 3.7.2)
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)

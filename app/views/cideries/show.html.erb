@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <br>
-<div class="card mb-3 jumbotron shadow-lg mb-5 bg-body rounded"">
+<div class="card mb-3 jumbotron shadow-lg mb-5 bg-body rounded">
   <div class="row g-0">
     <div class="col-md-3">
       <% if @cidery.logo.attached? %>
@@ -12,7 +12,7 @@
     <div class="col-md-9 d-flex">
       <div class="card-body text-white bg-dark">
         <h1 class="card-title"><%= @cidery.name%></h1>
-        <p class="card-text flex-fill"><%= @cidery.description %></p>
+        <p class="card-text full-fill"><%= @cidery.description %></p>
         <%= link_to 'Back', :back, class: "btn btn-outline-light btn-default" %>
         <% if user_signed_in? && current_user.cidery_id == @cidery.id %>
           <%= link_to 'Edit', edit_cidery_path(@cidery), class: "btn btn-outline-light btn-default" if can? :update, @cidery %>

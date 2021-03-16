@@ -12,6 +12,8 @@ Rails.application.routes.draw do
       get '/users/sign_out' => 'devise/sessions#destroy'
   end
   root to: "pages#index"
+  get "/saved", to: "pages#saved"
+  get "/contact", to: "pages#contact"
   resources :drinks
   resources :cideries
   get "/random", to: "drinks#random"
