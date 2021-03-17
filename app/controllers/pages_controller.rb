@@ -5,6 +5,9 @@ class PagesController < ApplicationController
   def saved
   end
 
+  def add
+  end
+
   def contact
   end
 end

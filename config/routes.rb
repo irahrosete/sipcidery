@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
   root to: "pages#index"
   get "/saved", to: "pages#saved"
+  get "/add", to: "pages#add"
   get "/contact", to: "pages#contact"
   resources :drinks
   resources :cideries

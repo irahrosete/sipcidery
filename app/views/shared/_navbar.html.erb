@@ -32,7 +32,9 @@
               <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             <% else %>
               <%= link_to "Sign In", new_user_session_path, class: "dropdown-item" %>
-              <%= link_to "Add Your CiDERY", contact_path, class: "dropdown-item" %>
+              <li><hr class="dropdown-divider"></li>
+              <%= link_to "Add Your CiDERY", add_path, class: "dropdown-item" %>
+              <%= link_to "Contact Us", contact_path, class: "dropdown-item" %>
             <% end %>
             <% if user_signed_in? %>
 

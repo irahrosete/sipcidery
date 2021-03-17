@@ -1,9 +1,7 @@
-<p id="notice"><%= notice %></p>
-
 <div class="jumbotron">
   <h1>Have you tried?</h1>
 </div>
 
 <% if can? :read, @drink %>
-<%= render 'drink' %>
+  <%= render 'drink' %>
 <% end %>
