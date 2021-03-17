@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   get "/saved", to: "pages#saved"
   get "/add", to: "pages#add"
   get "/contact", to: "pages#contact"
+  get "/random", to: "drinks#random"
   resources :drinks
   resources :cideries
-  get "/random", to: "drinks#random"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

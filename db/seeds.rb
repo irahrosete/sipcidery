@@ -6,18 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# cideries = ["The Apple Thief", "Hillbilly Cider", "Colonial Brewing Co.", "Bilpin Cider Co.", "Pomologist Cider", "Australian Brewery", "Sydney Brewery", "Darkes Cider", "Wild One", "Willie Smith's"]
-# cideries = [
-#   {id: 0, name: 'NO CIDERY', description: 'dummy cidery', email: 'nocidery@email.com'}
-# ]
-
-# if Cidery.count == 0
-#   cideries.each do |cidery|
-#     Cidery.create(cidery)
-#     puts 'created default cidery'
-#   end
-# end
-
 users = [
   {first_name: 'admin', last_name: 'x', email: 'sipcidery@gmail.com', password: '123qwe', role: 'super'},
   # {first_name: 'rep1', last_name: 'y', email: 'theapplethief1@gmail.com', password: '123qwe', role: 'rep'},
