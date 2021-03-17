@@ -5,6 +5,8 @@ class Drink < ApplicationRecord
   belongs_to :prod_method
   validates :name, presence: true
   has_one_attached :photo
+  has_many :saved_drinks
+  has_many :users, through: :saved_drinks
 
 
   def self.search(search)
