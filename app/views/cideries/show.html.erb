@@ -9,7 +9,9 @@
     </div>
     <div class="col-md-9 d-flex">
       <div class="card-body text-white bg-dark">
-        <h1 class="card-title"><%= @cidery.name%></h1>
+        <h1 class="card-title"><%= @cidery.name %></h1>
+        <h5 class="card-title">Origin: <%= @cidery.origin %></h5>
+        <h6 class="card-title">email: <%= @cidery.email %></h6>
         <p class="card-text full-fill"><%= @cidery.description %></p>
         <%= link_to 'Back', :back, class: "btn btn-outline-light btn-default" %>
           <% if (user_signed_in? && current_user.role == "super") || (user_signed_in? && current_user && current_user.cidery_id == @cidery.id) %>
