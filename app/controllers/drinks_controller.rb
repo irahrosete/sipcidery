@@ -53,6 +53,17 @@ class DrinksController < ApplicationController
       redirect_to drinks_url, notice: "Drink was successfully deleted."
   end
 
+  def saved
+    type = params[:type]
+    if type == "saved"
+      current_user.saved << @drink
+      redirect_to :back, notice: "You saved #{@drink.name}"
+    elsif type == "unsaved"
+      current_user.saved.delete(@drink)
+      redirect_to :back, notice: "Unsaved #{@drink.name}"
+    end
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_drink
