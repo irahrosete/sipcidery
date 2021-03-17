@@ -1,0 +1,2 @@
+class SugarContentsController < ApplicationController
+end
