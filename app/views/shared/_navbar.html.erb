@@ -13,17 +13,19 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavDarkDropdown">
       <ul class="navbar-nav">
 
+
+      <%if false %>
         <% if user_signed_in? && current_user.role == "rep" %>
           <li class="nav-item">
-            <%= link_to current_user.cidery.name, cideries_path, class: "btn btn-outline-dark btn-default-inverse" %>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "CiDERies", cideries_path, class: "btn btn-outline-dark btn-default-inverse" %>
+            <%= link_to current_user.cidery.name, cideries_path, class: "nav-link active btn" %>
           </li>
         <% end %>
+      <% end %>
 
 
+         <li class="nav-item">
+            <%= link_to "CiDERies", cideries_path, class: "btn btn-outline-dark btn-default-inverse" %>
+        </li>
         <li class="nav-item">
           <%= link_to "CiDERs", drinks_path, class: "nav-link active btn" %>
         </li>
