@@ -20,6 +20,17 @@ if User.count == 0
   puts 'created default users'
 end
 
+cideries = [
+  {name: 'Colonial Brewing Co.', description: 'One of the first breweries to open on Western Australia’s wild coastline, the Colonial Brewing Co tapped its first keg in 2004. It was the first step in an incredible journey, guided by some of Australia’s most talented and passionate brewers, we opened our first East Coast brewery in Port Melbourne in 2015. The name Colonial was given to the Brewery as it was one of the first to establish itself in the well regarded wine region of Margaret River, colonialisng the wine region with one of the first craft breweries. Since opening in 2015, Colonial Brewing Co has grown to a national Australian owned brand, expanding the Port Melbourne facility to take the brand from 3 million litres to the ability to brew up to 7 million litres. The facility includes the world’s best beer technology from BrauKon, as well as Krones canning line. But even as we grow, the product is continuously made by local brewers for the local community. Always uncomplicated.', email: 'mr@colonialbrewingco.com.au', origin: 'MARGARET RIVER WA 6285'}
+]
+
+if Cidery.count == 0
+  cideries.each do |cidery|
+    Cidery.create(cideries)
+  end
+  puts 'created default cidery'
+end
+
 styles = [
   ['New World', 'Made primarily from culinary or table fruit. Generally lower in tannin and higher in acidity. Clean, clear, fresh, fruity.'],
   ['Traditional', 'Fuller-bodied in the mouth, showing more savoury, fermentation-derived flavours, and more textural, grippy characters on the tongue. Show some tannin derived from the apples used.']

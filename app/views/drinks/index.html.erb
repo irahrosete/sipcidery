@@ -12,9 +12,9 @@
           <%= image_tag "cider-can.jpg", alt: "cider photo", class: "img-thumbnail card-img-top" %>
         <% end %>
         <div class="card-body text-white bg-dark">
-          <h3 class="card-title"><%= drink.name %></h3>
-          <h5 class="text-right"><%= drink.cidery.name %></h5>
-          <p> Style: <%= drink.style.name %>, <%= drink.sugar_content.name %>, <%= drink.prod_method.name %> </p>
+          <h3 class="card-title text-truncate"><%= drink.name %></h3>
+          <h5 class="card-text text-truncate"><%= drink.cidery.name %></h5>
+          <p class="card-text text-truncate"> Style: <%= drink.style.name %>, <%= drink.sugar_content.name %>, <%= drink.prod_method.name %> </p>
           <%= link_to 'See More', drink, class: "btn btn-outline-light btn-default" %>
         </div>
         <div class="card-footer">
