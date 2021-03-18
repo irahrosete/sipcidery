@@ -10,6 +10,7 @@ users = [
   {first_name: 'admin', last_name: 'x', email: 'sipcidery@gmail.com', password: '123qwe', role: 'super'},
   # {first_name: 'rep1', last_name: 'y', email: 'theapplethief1@gmail.com', password: '123qwe', role: 'rep'},
   # {first_name: 'rep2', last_name: 'y', email: 'theapplethief2@gmail.com', password: '123qwe', role: 'rep'},
+  # {first_name: 'rep3', last_name: 'y', email: 'hillbilly@gmail.com', password: '123qwe', role: 'rep'},
   {first_name: 'norman', last_name: 'z', email: 'drinknorman@gmail.com', password: '123qwe'}
 ]
 
@@ -29,6 +30,18 @@ if Cidery.count == 0
     Cidery.create(cideries)
   end
   puts 'created default cidery'
+end
+
+if Retailer.count == 0
+  Retailer.create([
+    {name: "Dan Murphy's"},
+    {name: "BWS"},
+    {name: "Liquorland"},
+    {name: "Cellarbrations"},
+    {name: "IGA Liquor"},
+    {name: "First Choice Liquor"}
+  ])
+  puts 'created retailers'
 end
 
 styles = [

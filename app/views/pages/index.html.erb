@@ -1,5 +1,9 @@
 <div class="jumbotron">
-  <h1>SiP CiDERY+</h1>
-  <h3><%= link_to 'Discover a CiDER', random_path %></h3>
-  <h3><%= link_to 'Meet the CiDERies', cideries_path %></h3>
+  <h1 class="landing"><%= link_to 'Discover a CiDER', random_path %></h1>
+  <h1 class="landing"><%= link_to 'Meet the CiDERies', cideries_path %></h1>
+  <%= link_to "DrinkWise", "https://drinkwise.org.au/" %>
 </div>
+
+<% if false%>
+  <%= image_tag 'discover.jpg', class: "img-fluid rounded border" %>
+<% end %>

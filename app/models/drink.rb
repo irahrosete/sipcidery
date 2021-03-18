@@ -7,6 +7,7 @@ class Drink < ApplicationRecord
   has_one_attached :photo
   has_many :saved_drinks
   has_many :users, through: :saved_drinks
+  has_and_belongs_to_many :retailers
 
 
   def self.search(search)

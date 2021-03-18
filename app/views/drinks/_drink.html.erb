@@ -12,14 +12,24 @@
             <h3 class="card-title"><%= @drink.name%></h3>
             <h5 class="text-right"><%= @drink.cidery.name %></h5>
             <p> Style: <%= @drink.style.name %>, <%= @drink.sugar_content.name %>, <%= @drink.prod_method.name %> </p>
+            <p class="card-text">AbV <%= @drink.abv %>% | <%= @drink.size %> mL </p>
             <p class="card-text"><%= @drink.description %></p>
-            <h5> $<%= @drink.price %> </h5>
+
+              <% if false %>
+              <p class="card-text">Also Available at: <%= @drink.retailers.name %>
+
+              <% @drink.retailers.each do |retailer| %>
+                <%= retailer.name %>
+              <% end %>
+              <% end %>
+            </p>
+
             <%= link_to 'Back', :back, class: "btn btn-outline-light btn-default" %>
             <% if !user_signed_in? || (user_signed_in? && current_user.role != "rep") %>
               <%= link_to 'Buy Now', drinks_path, class: "btn btn-outline-dark btn-default-inverse" %>
             <% end %>
 
-<%# unsure how this works %>
+<%# for saving and unsaving - unsure how this works %>
             <% if user_signed_in? && current_user.role != "rep" %>
               <%= link_to 'Saved', saved_drink_path(@drink, type: "saved"), method: :put %>
               <%= link_to 'Unsaved', saved_drink_path(@drink, type: "unsaved"), method: :put %>
