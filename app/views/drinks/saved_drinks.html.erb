@@ -17,9 +17,6 @@
           <p class="card-text text-truncate"> Style: <%= drink.style.name %>, <%= drink.sugar_content.name %>, <%= drink.prod_method.name %> </p>
           <%= link_to 'See More', drink, class: "btn btn-outline-light btn-default" %>
         </div>
-        <div class="card-footer">
-          <small class="text-muted">Added <%= time_ago_in_words(drink.created_at) %> ago </small>
-        </div>
       </div>
     </div>
   <% end %>

@@ -44,10 +44,6 @@
               <%= link_to 'Unsave', saved_drink_path(@drink, type: "unsaved"), method: :put, class: "btn btn-outline-light btn-default" %>
             <% end %>
 
-
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Added <%= time_ago_in_words(@drink.created_at) %> ago </small>
           </div>
         </div>
       </div>
