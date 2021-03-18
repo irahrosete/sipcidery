@@ -57,11 +57,15 @@ class DrinksController < ApplicationController
     type = params[:type]
     if type == "saved"
       current_user.saved << @drink
-      redirect_to :back, notice: "You saved #{@drink.name}"
+      redirect_to drink_path, notice: "You saved #{@drink.name}"
     elsif type == "unsaved"
       current_user.saved.delete(@drink)
-      redirect_to :back, notice: "Unsaved #{@drink.name}"
+      redirect_to drink_path, notice: "Unsaved #{@drink.name}"
     end
+  end
+
+  def saved_drinks
+    @drinks = current_user.saved
   end
 
   private

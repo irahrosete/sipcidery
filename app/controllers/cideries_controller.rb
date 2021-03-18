@@ -64,10 +64,14 @@ class CideriesController < ApplicationController
   end
 
   # def get_origin
-  #   api_uri = URI.parse(https://api.addressfinder.io/api/au/location/autocomplete/?key=ADDRESSFINDER_DEMO_KEY&secret=ADDRESSFINDER_DEMO_SECRET&q=alexand&format=json&location_types=locality)
+  #   key = "ML3FWR7DYNKUPTJV8EG4"
+
+  #   api_uri = URI.parse("https://api.addressfinder.io/api/au/location/autocomplete/?key=#{key}&secret=ADDRESSFINDER_DEMO_SECRET&q=alexand&format=json&location_types=locality")
   #   result_raw = Net::HTTP.get(api_uri)
   #   result_parsed = JSON.parse(result_raw)
-  #   origin = result_parsed["completions"]["full_location"]
+  #   origin = result_parsed["completions"]
+  #   puts "----------------------"
+  #   pp result_parsed
   # end
 
 end

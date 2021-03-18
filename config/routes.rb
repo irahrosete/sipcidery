@@ -13,10 +13,10 @@ Rails.application.routes.draw do
   end
 
   root to: "pages#index"
-  get "/saved", to: "pages#saved"
   get "/add", to: "pages#add"
   get "/contact", to: "pages#contact"
   get "/random", to: "drinks#random"
+  get "/saved_drinks", to: "drinks#saved_drinks"
   resources :drinks do
     put :saved, on: :member
   end

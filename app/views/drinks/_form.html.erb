@@ -1,4 +1,5 @@
 <div class="col-md-6 offset-md-3 col-sm-4 offset-sm-4">
+
   <%= simple_form_for(@drink) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -6,6 +7,7 @@
     <div class="form-inputs">
       <%= f.input :name %>
       <%= f.association :cidery, collection: Cidery.where("id != 0").order(:name), label_method: :name, prompt: "Choose a Cidery" %>
+      <%# <%= f.association :cidery, collection: Cidery.where("id == current_user.cidery.id"), label_method: :name, prompt: "Choose a Cidery" %>
 
       <%= f.association :style, label_method: :name, prompt: "Choose a Style" %>
       <%= f.association :sugar_content, label_method: :name, prompt: "Choose Sweetness" %>
@@ -15,9 +17,9 @@
       <%= f.input :size %>
 
       <%= f.input :description %>
+      <%= f.association :retailers, as: :check_boxes %>
 
       <% if false %>
-        <%= f.association :retailers, as: :check_boxes %>
         <%= f.input :price %>
         <%= f.input :available %>
         <%= f.input :quantity %>
