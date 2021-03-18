@@ -1,11 +1,7 @@
 <div class="jumbotron">
-  <h1 class="landing"><%= link_to 'Discover a CiDER', random_path %></h1>
-  <h1 class="landing"><%= link_to 'Meet the CiDERies', cideries_path %></h1>
-  <p><%= link_to "DrinkWise", "https://drinkwise.org.au/" %></p>
-  <p><%= link_to "Cider Australia", "http://www.cideraustralia.org.au/" %></p>
-
+  <h1 class="landing d-flex justify-content-center"><%= link_to 'Discover a CiDER', random_path %></h1>
+  <h1 class="landing d-flex justify-content-center"><%= link_to 'Meet the CiDERies', cideries_path %></h1>
+  <%= image_tag 'cider-bg.jpg', class: "img-fluid rounded border" %>
+  <h5 class="landing d-flex justify-content-center"> <%= link_to "DrinkWise", "https://drinkwise.org.au/" %></h5>
+  <h5 class="landing d-flex justify-content-center"> <%= link_to "Cider Australia", "http://www.cideraustralia.org.au/" %> </h5>
 </div>
-
-<% if false%>
-  <%= image_tag 'discover.jpg', class: "img-fluid rounded border" %>
-<% end %>
