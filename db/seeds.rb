@@ -8,9 +8,9 @@
 
 users = [
   {first_name: 'admin', last_name: 'x', email: 'sipcidery@gmail.com', password: '123qwe', role: 'super'},
-  # {first_name: 'rep1', last_name: 'y', email: 'theapplethief1@gmail.com', password: '123qwe', role: 'rep'},
-  # {first_name: 'rep2', last_name: 'y', email: 'theapplethief2@gmail.com', password: '123qwe', role: 'rep'},
-  # {first_name: 'rep3', last_name: 'y', email: 'hillbilly@gmail.com', password: '123qwe', role: 'rep'},
+  {first_name: 'rep1', last_name: 'y', email: 'theapplethief1@gmail.com', password: '123qwe', role: 'rep'},
+  {first_name: 'rep2', last_name: 'y', email: 'theapplethief2@gmail.com', password: '123qwe', role: 'rep'},
+  {first_name: 'billy', last_name: 'y', email: 'hillbilly@gmail.com', password: '123qwe', role: 'rep'},
   {first_name: 'norman', last_name: 'z', email: 'drinknorman@gmail.com', password: '123qwe'}
 ]
 
