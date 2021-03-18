@@ -35,7 +35,7 @@
           <%= image_tag "cider-can.jpg", alt: "cider photo", class: "img-thumbnail card-img-top" %>
         <% end %>
         <div class="card-body text-white bg-dark">
-          <h3> <%= link_to drink.name, drink, class: "card-title text-white card-link" %> </h3>
+          <h3> <%= link_to drink.name, drink, class: "card-title text-white" %> </h3>
         </div>
         <div class="card-footer">
           <small class="text-muted">Added <%= time_ago_in_words(drink.created_at) %> ago </small>
