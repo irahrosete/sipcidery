@@ -1,0 +1,26 @@
+<div class="jumbotron">
+  <h1>My CiDERs</h1>
+</div>
+
+<div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4">
+  <% @drinks.each do |drink| %>
+    <div class="col mb-4">
+      <div class="card h-100" style="width: 18rem;">
+        <% if drink.photo.attached? %>
+          <%= image_tag drink.photo, alt: "cider photo", class: "img-thumbnail card-img-top" %>
+        <% else %>
+          <%= image_tag "cider-can.jpg", alt: "cider photo", class: "img-thumbnail card-img-top" %>
+        <% end %>
+        <div class="card-body text-white bg-dark">
+          <h3 class="card-title text-truncate"><%= drink.name %></h3>
+          <h5 class="card-text text-truncate"><%= drink.cidery.name %></h5>
+          <p class="card-text text-truncate"> Style: <%= drink.style.name %>, <%= drink.sugar_content.name %>, <%= drink.prod_method.name %> </p>
+          <%= link_to 'See More', drink, class: "btn btn-outline-light btn-default" %>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Added <%= time_ago_in_words(drink.created_at) %> ago </small>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

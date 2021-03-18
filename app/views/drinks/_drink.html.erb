@@ -15,30 +15,36 @@
             <p class="card-text">AbV <%= @drink.abv %>% | <%= @drink.size %> mL </p>
             <p class="card-text"><%= @drink.description %></p>
 
-              <% if false %>
-              <p class="card-text">Also Available at: <%= @drink.retailers.name %>
-
-              <% @drink.retailers.each do |retailer| %>
-                <%= retailer.name %>
-              <% end %>
+            <p class="card-text">Also Available at:</p>
+            <p class="card-text">
+              <% @drink.availables.each do |retailer| %>
+                <%= retailer.retailer.name %>
+                <br>
               <% end %>
             </p>
 
             <%= link_to 'Back', :back, class: "btn btn-outline-light btn-default" %>
+            <%if false %>
             <% if !user_signed_in? || (user_signed_in? && current_user.role != "rep") %>
               <%= link_to 'Buy Now', drinks_path, class: "btn btn-outline-dark btn-default-inverse" %>
             <% end %>
-
-<%# for saving and unsaving - unsure how this works %>
-            <% if user_signed_in? && current_user.role != "rep" %>
-              <%= link_to 'Saved', saved_drink_path(@drink, type: "saved"), method: :put %>
-              <%= link_to 'Unsaved', saved_drink_path(@drink, type: "unsaved"), method: :put %>
             <% end %>
 
             <% if (user_signed_in? && current_user.cidery_id == @drink.cidery.id) || (user_signed_in? && current_user.role == "super" ) %>
               <%= link_to 'Edit', edit_drink_path(@drink), class: "btn btn-outline-light btn-default" if can? :update, @drink %>
               <%= link_to 'Delete', drinks_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-light btn-default" if can? :destroy, @drink %>
             <% end %>
+
+            <br>
+            <br>
+
+<%# for saving and unsaving - unsure how this works %>
+            <% if user_signed_in? && (current_user.role == "normal") %>
+              <%= link_to 'Save', saved_drink_path(@drink, type: "saved"), method: :put, class: "btn btn-outline-dark btn-default-inverse" %>
+              <%= link_to 'Unsave', saved_drink_path(@drink, type: "unsaved"), method: :put, class: "btn btn-outline-light btn-default" %>
+            <% end %>
+
+
           </div>
           <div class="card-footer">
             <small class="text-muted">Added <%= time_ago_in_words(@drink.created_at) %> ago </small>
