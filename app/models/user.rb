@@ -5,9 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   belongs_to :cidery, optional: true
   enum role: {normal: 0, rep: 1, super: 2}
-  # has_many :drinks
-  # has_many :saved_drinks, through: :drinks
-
   has_many :saved_drinks
   has_many :saved, through: :saved_drinks, source: :drink
 end

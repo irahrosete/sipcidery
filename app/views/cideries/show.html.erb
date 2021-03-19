@@ -37,9 +37,6 @@
         <div class="card-body text-white bg-dark">
           <h3> <%= link_to drink.name, drink, class: "card-title text-white" %> </h3>
         </div>
-        <div class="card-footer">
-          <small class="text-muted">Added <%= time_ago_in_words(drink.created_at) %> ago </small>
-        </div>
       </div>
     </div>
   <% end %>

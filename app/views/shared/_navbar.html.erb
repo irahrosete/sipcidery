@@ -1,7 +1,7 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark">
   <div class="container-md">
     <%= link_to root_path do %>
-      <%= image_tag "cider.jpg", alt: "logo", class: "logo" %>
+      <%= image_tag "cider-logo.jpg", alt: "logo", class: "logo" %>
     <% end %>
     <%= link_to "SiP CiDERY", root_path, class: "navbar-brand" %>
 
@@ -27,20 +27,19 @@
             <%= fa_icon "user-circle" %>
           </a>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+            <%= link_to "About", add_path, class: "dropdown-item" %>
+            <%= link_to "Add Your CiDERY", add_path, class: "dropdown-item" %>
+            <%= link_to "Contact Us", contact_path, class: "dropdown-item" %>
             <% if user_signed_in? %>
+              <li><hr class="dropdown-divider"></li>
               <%= link_to "Manage Users", admin_root_path, class: "dropdown-item" if can? :manage, @user %>
               <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to "Saved CiDERs", saved_drinks_path, class: "dropdown-item" if current_user.role == "normal" %>
               <li><hr class="dropdown-divider"></li>
               <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             <% else %>
-              <%= link_to "Sign In", new_user_session_path, class: "dropdown-item" %>
               <li><hr class="dropdown-divider"></li>
-              <%= link_to "Add Your CiDERY", add_path, class: "dropdown-item" %>
-              <%= link_to "Contact Us", contact_path, class: "dropdown-item" %>
-            <% end %>
-            <% if user_signed_in? %>
-
+              <%= link_to "Sign In", new_user_session_path, class: "dropdown-item" %>
             <% end %>
           </ul>
         </li>

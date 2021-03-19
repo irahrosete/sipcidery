@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
 
   root to: "pages#index"
+  get "/about", to: "pages#about"
   get "/add", to: "pages#add"
   get "/contact", to: "pages#contact"
   get "/random", to: "drinks#random"
