@@ -7,7 +7,7 @@ class Drink < ApplicationRecord
   has_one_attached :photo
   has_many :saved_drinks, dependent: :destroy
   has_many :users, through: :saved_drinks
-  has_many :availables
+  has_many :availables, dependent: :destroy
   has_many :retailers, through: :availables
 
 

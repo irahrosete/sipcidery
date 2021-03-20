@@ -1,6 +1,7 @@
 class DrinksController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index, :random]
   before_action :set_drink, only: %i[ show edit update destroy ]
+  before_action :allow_cidery, only: [:new, :edit]
   load_and_authorize_resource
 
   # GET /drinks
@@ -76,5 +77,13 @@ class DrinksController < ApplicationController
   # Only allow a list of trusted parameters through.
   def drink_params
     params.require(:drink).permit(:name, :description, :price, :available, :quantity, :cidery_id, :style_id, :sugar_content_id, :prod_method_id, :photo, :abv, :size, retailer_ids: [])
+  end
+
+  def allow_cidery
+    if current_user.super?
+      @cideries = Cidery.all
+    elsif current_user.rep?
+       @cideries = Cidery.where(id: current_user.cidery_id)
+    end
   end
 end
