@@ -1,2 +1,0 @@
-class ProdMethodsController < ApplicationController
-end

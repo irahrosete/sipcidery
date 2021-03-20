@@ -10,7 +10,7 @@ class Drink < ApplicationRecord
   has_many :availables, dependent: :destroy
   has_many :retailers, through: :availables
 
-
+  # define search function from navbar
   def self.search(search)
     if search
       where(["LOWER(name) LIKE ?", "%#{search.downcase}%"])
@@ -18,5 +18,4 @@ class Drink < ApplicationRecord
       all
     end
   end
-
 end

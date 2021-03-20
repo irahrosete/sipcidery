@@ -6,7 +6,7 @@ class DrinksController < ApplicationController
 
   # GET /drinks
   def index
-    # @drinks = Drink.all
+    # to assist random method using index view
     @drinks = Drink.search(params[:search])
   end
 
@@ -53,6 +53,7 @@ class DrinksController < ApplicationController
       redirect_to drinks_url, notice: "Drink was successfully deleted."
   end
 
+  # allow saving and unsaving drinks
   def saved
     type = params[:type]
     if type == "saved"
@@ -79,6 +80,7 @@ class DrinksController < ApplicationController
     params.require(:drink).permit(:name, :description, :price, :available, :quantity, :cidery_id, :style_id, :sugar_content_id, :prod_method_id, :photo, :abv, :size, retailer_ids: [])
   end
 
+  # limit Cidery available to rep users to only their Cidery. To be used on forms
   def allow_cidery
     if current_user.super?
       @cideries = Cidery.all

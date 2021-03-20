@@ -1,10 +1,10 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark">
   <div class="container-md">
+
     <%= link_to root_path do %>
       <%= image_tag "cider-logo.jpg", alt: "logo", class: "logo" %>
     <% end %>
     <%= link_to "SiP CiDERY", root_path, class: "navbar-brand" %>
-
     <%= form_tag drinks_path, class: "d-flex", method: "get" do %>
       <%= text_field_tag :search, params[:search], placeholder: "Search CiDERs", class: "form-control me-2" %>
       <%= submit_tag "Search", class: "btn btn-outline-light btn-default" %>
@@ -13,12 +13,13 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavDarkDropdown">
       <ul class="navbar-nav">
 
-
+      <%# only show for rep users%>
       <% if user_signed_in? && current_user.role == "rep" %>
         <li class="nav-item">
           <%= link_to current_user.cidery.name, cidery_path(current_user.cidery_id), class: "nav-link active btn" %>
         </li>
       <% end %>
+
         <li class="nav-item">
           <%= link_to "CiDERies", cideries_path, class: "btn btn-outline-dark btn-default-inverse" %>
         </li>
@@ -31,13 +32,15 @@
             <%= fa_icon "user-circle" %>
           </a>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-            <%= link_to "About", add_path, class: "dropdown-item" %>
+            <%= link_to "About", about_path, class: "dropdown-item" %>
             <%= link_to "Add Your CiDERY", add_path, class: "dropdown-item" %>
             <%= link_to "Contact Us", contact_path, class: "dropdown-item" %>
             <% if user_signed_in? %>
               <li><hr class="dropdown-divider"></li>
+              <%# only show for super users %>
               <%= link_to "Manage Users", admin_root_path, class: "dropdown-item" if can? :manage, @user %>
               <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
+              <%# only show for normal users %>
               <%= link_to "Saved CiDERs", saved_drinks_path, class: "dropdown-item" if current_user.role == "normal" %>
               <li><hr class="dropdown-divider"></li>
               <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>

@@ -6,23 +6,24 @@
 
 <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4">
   <% @cideries.each do |cidery| %>
+    <%# exclude dummy cidery with id 0. Used to seed first cidery %>
     <% if cidery.id > 0 %>
-    <div class="col mb-4">
-      <div class="card h-100 shadow-lg bg-body rounded" style="width: 18rem;">
-        <% if cidery.logo.attached? %>
-          <%= image_tag cidery.logo, alt: "cidery logo", class: "img-thumbnail card-img-top" %>
-          <% else %>
-          <%= image_tag "cidery-logo.jpg", alt: "cidery logo", class: "img-thumbnail card-img-top" %>
-        <% end %>
-        <div class="card-body text-white bg-dark">
-          <h3 class="card-title text-truncate"><%= cidery.name %></h3>
-          <h6 class="card-text text-truncate"><%= cidery.origin %></h6>
-          <p class="card-text text-truncate"><%= cidery.description %></p>
-          <h5> <%= pluralize cidery.drinks.count, "CiDER" %> </h5>
-          <%= link_to 'See More', cidery, class: "btn btn-outline-light btn-default" %>
+      <div class="col mb-4">
+        <div class="card h-100 shadow-lg bg-body rounded" style="width: 18rem;">
+          <% if cidery.logo.attached? %>
+            <%= image_tag cidery.logo, alt: "cidery logo", class: "img-thumbnail card-img-top" %>
+            <% else %>
+            <%= image_tag "cidery-logo.jpg", alt: "cidery logo", class: "img-thumbnail card-img-top" %>
+          <% end %>
+          <div class="card-body text-white bg-dark">
+            <h3 class="card-title text-truncate"><%= cidery.name %></h3>
+            <h6 class="card-text text-truncate"><%= cidery.origin %></h6>
+            <p class="card-text text-truncate"><%= cidery.description %></p>
+            <h5> <%= pluralize cidery.drinks.count, "CiDER" %> </h5>
+            <%= link_to 'See More', cidery, class: "btn btn-outline-light btn-default" %>
+          </div>
         </div>
       </div>
-    </div>
     <% end %>
   <% end %>
 </div>

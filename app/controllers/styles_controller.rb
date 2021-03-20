@@ -1,2 +1,0 @@
-class StylesController < ApplicationController
-end

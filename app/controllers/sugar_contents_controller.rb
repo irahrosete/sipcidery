@@ -1,2 +1,0 @@
-class SugarContentsController < ApplicationController
-end

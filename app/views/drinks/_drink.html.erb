@@ -8,13 +8,13 @@
           <% else %>
             <%= image_tag "cider-can.jpg", alt: "cider photo", class: "img-thumbnail card-img-top" %>
           <% end %>
+
           <div class="card-body text-white bg-dark">
             <h3 class="card-title"><%= @drink.name%></h3>
             <h5 class="text-right"><%= @drink.cidery.name %></h5>
             <p> Style: <%= @drink.style.name %>, <%= @drink.sugar_content.name %>, <%= @drink.prod_method.name %> </p>
             <p class="card-text">AbV <%= @drink.abv %>% | <%= @drink.size %> mL </p>
             <p class="card-text"><%= @drink.description %></p>
-
             <p class="card-text">Also Available at:</p>
             <p class="card-text">
               <% @drink.availables.each do |retailer| %>
