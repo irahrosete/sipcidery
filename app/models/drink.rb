@@ -9,6 +9,7 @@ class Drink < ApplicationRecord
   has_many :users, through: :saved_drinks
   has_many :availables, dependent: :destroy
   has_many :retailers, through: :availables
+  before_save :remove_whitespace
 
   # define search function from navbar
   def self.search(search)
@@ -18,4 +19,10 @@ class Drink < ApplicationRecord
       all
     end
   end
+end
+
+# remove white space
+def remove_whitespace
+  self.name = self.name.strip
+  self.description = self.description.strip
 end
