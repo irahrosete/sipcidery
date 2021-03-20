@@ -1,5 +1,4 @@
 class CideriesController < ApplicationController
-  # require 'net/http'
   before_action :authenticate_user!, except: [:show, :index]
   before_action :set_cidery, only: %i[ show edit update destroy ]
   load_and_authorize_resource
@@ -7,7 +6,6 @@ class CideriesController < ApplicationController
   # GET /cideries
   def index
     @cideries = Cidery.all
-    # get_origin
   end
 
   # GET /cideries/1
@@ -29,7 +27,6 @@ class CideriesController < ApplicationController
     @cidery.id = current_user.cidery_id
     if @cidery.save
       redirect_to @cidery, notice: "Cidery was successfully created."
-      # redirect_to @cidery, notice: "Cidery was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
@@ -62,16 +59,4 @@ class CideriesController < ApplicationController
   def cidery_params
     params.require(:cidery).permit(:name, :description, :logo, :email, :user_id, :origin)
   end
-
-  # def get_origin
-  #   key = "ML3FWR7DYNKUPTJV8EG4"
-
-  #   api_uri = URI.parse("https://api.addressfinder.io/api/au/location/autocomplete/?key=ADDRESSFINDER_DEMO_KEY&secret=ADDRESSFINDER_DEMO_SECRET&q=alexand&format=json&location_types=locality")
-  #   result_raw = Net::HTTP.get(api_uri)
-  #   result_parsed = JSON.parse(result_raw)
-  #   origin = result_parsed["completions"]
-  #   puts "----------------------"
-  #   pp result_parsed
-  # end
-
 end

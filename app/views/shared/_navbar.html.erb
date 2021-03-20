@@ -12,8 +12,12 @@
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavDarkDropdown">
       <ul class="navbar-nav">
+
+
       <% if user_signed_in? && current_user.role == "rep" %>
-        <h4 class="cidery btn btn-outline-dark"><%= current_user.cidery.name %></h4>
+        <li class="nav-item">
+          <%= link_to current_user.cidery.name, cidery_path(current_user.cidery_id), class: "nav-link active btn" %>
+        </li>
       <% end %>
         <li class="nav-item">
           <%= link_to "CiDERies", cideries_path, class: "btn btn-outline-dark btn-default-inverse" %>
