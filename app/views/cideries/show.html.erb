@@ -1,4 +1,4 @@
-<div class="card mb-3 jumbotron shadow-lg mb-5 bg-body rounded">
+<div class="card jumbotron shadow-lg mb-5 bg-body rounded">
   <div class="row g-0">
 
     <div class="col-md-3">
@@ -23,15 +23,13 @@
         <% end %>
       </div>
     </div>
-
   </div>
 </div>
-<br>
 <h2>The Range</h2>
 <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4">
   <% @cidery.drinks.each do |drink| %>
     <div class="col mb-4">
-      <div class="card h-100" style="width: 18rem;">
+      <div class="card h-100 shadow-lg bg-body rounded" style="width: 18rem;">
         <% if drink.photo.attached? %>
           <%= image_tag drink.photo, alt: "cider photo", class: "img-thumbnail card-img-top" %>
         <% else %>

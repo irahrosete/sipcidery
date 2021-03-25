@@ -9,7 +9,7 @@
     <%# exclude dummy cidery with id 0. Used to seed first cidery %>
     <% if cidery.id > 0 %>
       <div class="col mb-4">
-        <div class="card h-100 shadow-lg bg-body rounded" style="width: 18rem;">
+        <div class="card h-100 w-auto shadow-lg bg-body rounded" >
           <% if cidery.logo.attached? %>
             <%= image_tag cidery.logo, alt: "cidery logo", class: "img-thumbnail card-img-top" %>
             <% else %>

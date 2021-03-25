@@ -1,45 +1,41 @@
 <div class="row">
-  <div class="jumbotron col-md-6 offset-md-3 col-sm-4 offset-sm-4">
-    <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4">
-      <div class="col mb-4">
-        <div class="card h-100" style="width: 25rem;">
-          <% if @drink.photo.attached? %>
-            <%= image_tag @drink.photo, alt: "cider photo", class: "img-thumbnail card-img-top" %>
-          <% else %>
-            <%= image_tag "cider-can.jpg", alt: "cider photo", class: "img-thumbnail card-img-top" %>
+  <div class="jumbotron col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-sm-4 offset-sm-4">
+    <div class="card shadow-lg mb-5 bg-body rounded">
+      <% if @drink.photo.attached? %>
+        <%= image_tag @drink.photo, alt: "cider photo", class: "img-thumbnail card-img-top" %>
+      <% else %>
+        <%= image_tag "cider-can.jpg", alt: "cider photo", class: "img-thumbnail card-img-top" %>
+      <% end %>
+
+      <div class="card-body text-white bg-dark">
+        <h3 class="card-title"><%= @drink.name%></h3>
+        <h5 class="text-right"><%= @drink.cidery.name %></h5>
+        <p> Style: <%= @drink.style.name %>, <%= @drink.sugar_content.name %>, <%= @drink.prod_method.name %> </p>
+        <p class="card-text">AbV <%= @drink.abv %>% | <%= @drink.size %> mL </p>
+        <p class="card-text"><%= @drink.description %></p>
+        <p class="card-text">Also Available at:</p>
+        <p class="card-text">
+          <% @drink.availables.each do |retailer| %>
+            <%= retailer.retailer.name %>
+            <br>
           <% end %>
+        </p>
 
-          <div class="card-body text-white bg-dark">
-            <h3 class="card-title"><%= @drink.name%></h3>
-            <h5 class="text-right"><%= @drink.cidery.name %></h5>
-            <p> Style: <%= @drink.style.name %>, <%= @drink.sugar_content.name %>, <%= @drink.prod_method.name %> </p>
-            <p class="card-text">AbV <%= @drink.abv %>% | <%= @drink.size %> mL </p>
-            <p class="card-text"><%= @drink.description %></p>
-            <p class="card-text">Also Available at:</p>
-            <p class="card-text">
-              <% @drink.availables.each do |retailer| %>
-                <%= retailer.retailer.name %>
-                <br>
-              <% end %>
-            </p>
+        <%= link_to 'Back', :back, class: "btn btn-outline-light btn-default" %>
+        <%if false %>
+        <% if !user_signed_in? || (user_signed_in? && current_user.role != "rep") %>
+          <%= link_to 'Buy Now', drinks_path, class: "btn btn-outline-dark btn-default-inverse" %>
+        <% end %>
+        <% end %>
 
-            <%= link_to 'Back', :back, class: "btn btn-outline-light btn-default" %>
-            <%if false %>
-            <% if !user_signed_in? || (user_signed_in? && current_user.role != "rep") %>
-              <%= link_to 'Buy Now', drinks_path, class: "btn btn-outline-dark btn-default-inverse" %>
-            <% end %>
-            <% end %>
-
-            <% if (user_signed_in? && current_user.cidery_id == @drink.cidery.id) || (user_signed_in? && current_user.role == "super" ) %>
-              <%= link_to 'Edit', edit_drink_path(@drink), class: "btn btn-outline-light btn-default" if can? :update, @drink %>
-              <%= link_to 'Delete', drink_path(@drink), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-light btn-default" if can? :destroy, @drink %>
-            <% end %>
-            <% if user_signed_in? && (current_user.role == "normal") %>
-              <%= link_to 'Save', saved_drink_path(@drink, type: "saved"), method: :put, class: "btn btn-outline-dark btn-default-inverse" unless current_user.saved_ids.include?(@drink.id) %>
-              <%= link_to 'Unsave', saved_drink_path(@drink, type: "unsaved"), method: :put, class: "btn btn-outline-light btn-default" if current_user.saved_ids.include?(@drink.id) %>
-            <% end %>
-          </div>
-        </div>
+        <% if (user_signed_in? && current_user.cidery_id == @drink.cidery.id) || (user_signed_in? && current_user.role == "super" ) %>
+          <%= link_to 'Edit', edit_drink_path(@drink), class: "btn btn-outline-light btn-default" if can? :update, @drink %>
+          <%= link_to 'Delete', drink_path(@drink), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-light btn-default" if can? :destroy, @drink %>
+        <% end %>
+        <% if user_signed_in? && (current_user.role == "normal") %>
+          <%= link_to 'Save', saved_drink_path(@drink, type: "saved"), method: :put, class: "btn btn-outline-dark btn-default-inverse" unless current_user.saved_ids.include?(@drink.id) %>
+          <%= link_to 'Unsave', saved_drink_path(@drink, type: "unsaved"), method: :put, class: "btn btn-outline-light btn-default" if current_user.saved_ids.include?(@drink.id) %>
+        <% end %>
       </div>
     </div>
   </div>
