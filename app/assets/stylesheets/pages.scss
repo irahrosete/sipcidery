@@ -8,3 +8,34 @@
     color: inherit;
   }
 }
+
+#background {
+  position: fixed;
+  top: 58%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-58%);
+  transform: translateX(-50%) translateY(-50%);
+  background: image-url('cider-bg.jpg') no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+}
+
+.vertical-center {
+  // min-height: 80vh;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}

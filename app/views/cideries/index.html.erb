@@ -18,7 +18,6 @@
           <div class="card-body text-white bg-dark">
             <h3 class="card-title text-truncate"><%= cidery.name %></h3>
             <h6 class="card-text text-truncate"><%= cidery.origin %></h6>
-            <p class="card-text text-truncate"><%= cidery.description %></p>
             <h5> <%= pluralize cidery.drinks.count, "CiDER" %> </h5>
             <%= link_to 'See More', cidery, class: "btn btn-outline-light btn-default" %>
           </div>
