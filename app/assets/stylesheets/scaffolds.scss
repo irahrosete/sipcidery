@@ -19,7 +19,10 @@ div.actions {
   margin-bottom: 10px; }
 
 #notice {
-  color: rgb(38, 100, 214); }
+  color: var(--dark);
+  background-color: var(--green);
+  display: inline-block;
+}
 
 .field_with_errors {
   padding: 2px;
