@@ -2,7 +2,7 @@
   <h1>CiDERs</h1>
 </div>
 
-<div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4">
+<div class="row row-cols-xs-2 row-cols-md-3 row-cols-lg-5">
   <% @drinks.each do |drink| %>
     <div class="col mb-4">
       <div class="card shadow-lg bg-body rounded h-100 w-auto">
@@ -14,7 +14,6 @@
         <div class="card-body text-white bg-dark rounded-bottom">
           <h3 class="card-title text-truncate"><%= drink.name %></h3>
           <h5 class="card-text text-truncate"><%= drink.cidery.name %></h5>
-          <p class="card-text text-truncate"> Style: <%= drink.style.name %>, <%= drink.sugar_content.name %>, <%= drink.prod_method.name %> </p>
           <%= link_to 'See More', drink, class: "btn btn-outline-light btn-default" %>
         </div>
       </div>

@@ -29,7 +29,7 @@
 <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4">
   <% @cidery.drinks.each do |drink| %>
     <div class="col mb-4">
-      <div class="card h-100 shadow-lg bg-body rounded" style="width: 18rem;">
+      <div class="card h-100 shadow-lg bg-body rounded">
         <% if drink.photo.attached? %>
           <%= image_tag drink.photo, alt: "cider photo", class: "img-thumbnail card-img-top" %>
         <% else %>
