@@ -35,8 +35,8 @@
         <% else %>
           <%= image_tag "cider-can.jpg", alt: "cider photo", class: "img-thumbnail card-img-top" %>
         <% end %>
-        <div class="card-body text-truncate text-white bg-dark rounded-bottom">
-          <h3> <%= link_to drink.name, drink, class: "card-title text-white" %> </h3>
+        <div class="card-body bg-dark text-white rounded-bottom">
+          <h3 class="card-title text-truncate", id="link"> <%= link_to drink.name, drink %> </h3>
         </div>
       </div>
     </div>

@@ -93,3 +93,10 @@ body {
 a {
   text-decoration: none;
 }
+
+#link {
+  color: var(--light);
+  a:visited {
+    color: var(--light);
+  }
+}
