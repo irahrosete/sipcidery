@@ -10,7 +10,7 @@
     </div>
 
     <div class="col-md-9 d-flex">
-      <div class="card-body text-white bg-dark">
+      <div class="card-body text-white bg-dark rounded-end">
         <h1 class="card-title"><%= @cidery.name %></h1>
         <h5 class="card-title">Origin: <%= @cidery.origin %></h5>
         <h6 class="card-title">email: <%= @cidery.email %></h6>
@@ -35,7 +35,7 @@
         <% else %>
           <%= image_tag "cider-can.jpg", alt: "cider photo", class: "img-thumbnail card-img-top" %>
         <% end %>
-        <div class="card-body text-truncate text-white bg-dark">
+        <div class="card-body text-truncate text-white bg-dark rounded-bottom">
           <h3> <%= link_to drink.name, drink, class: "card-title text-white" %> </h3>
         </div>
       </div>

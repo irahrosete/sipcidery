@@ -1,30 +1,19 @@
-<% if false %>
-  <div class="jumbotron ">
-    <h1 class="landing d-flex justify-content-center"><%= link_to 'Discover a CiDER', random_path %></h1>
-    <h1 class="landing d-flex justify-content-center"><%= link_to 'Meet the CiDERies', cideries_path %></h1>
-    <%= image_tag 'cider-bg.jpg', class: "img-fluid rounded border" %>
-    <h5 class="landing d-flex justify-content-center"> <%= link_to "DrinkWise", "https://drinkwise.org.au/" %></h5>
-    <h5 class="landing d-flex justify-content-center"> <%= link_to "Cider Australia", "http://www.cideraustralia.org.au/" %> </h5>
-  </div>
-<% end %>
-
 <div id="background">
 </div>
-
-  <div class="jumbotron vertical-center">
+<div class="jumbotron vertical-center">
   <div class="btn-group-vertical">
-    <button type="button" class="landing btn btn-outline-dark btn-default-inverse mt-2 shadow-lg rounded" style="border-color: #212529;">
+    <button type="button" class="landing btn btn-outline-dark btn-default-inverse m-1 rounded" style="border-color: #212529;">
       <%= link_to 'Discover a CiDER', random_path %>
     </button>
-    <button type="button" class="landing btn btn-outline-dark btn-default-inverse mt-2 shadow-lg rounded" style="border-color: #212529;">
+    <button type="button" class="landing btn btn-outline-dark btn-default-inverse m-1 rounded" style="border-color: #212529;">
       <%= link_to 'Meet the CiDERies', cideries_path %>
     </button>
-  </div>
-  </div>
+</div>
+</div>
 
 <div class="footer pt-2">
   <h6 class="landing">
-    <%= link_to "DrinkWise", "https://drinkwise.org.au/" %> |
+    <%= link_to "DrinkWise | ", "https://drinkwise.org.au/" %>
     <%= link_to "Cider Australia", "http://www.cideraustralia.org.au/" %>
   </h6>
 </div>

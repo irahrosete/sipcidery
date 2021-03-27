@@ -15,7 +15,7 @@
             <% else %>
             <%= image_tag "cidery-logo.jpg", alt: "cidery logo", class: "img-thumbnail card-img-top" %>
           <% end %>
-          <div class="card-body text-white bg-dark">
+          <div class="card-body text-white bg-dark rounded-bottom">
             <h3 class="card-title text-truncate"><%= cidery.name %></h3>
             <h6 class="card-text text-truncate"><%= cidery.origin %></h6>
             <h5> <%= pluralize cidery.drinks.count, "CiDER" %> </h5>

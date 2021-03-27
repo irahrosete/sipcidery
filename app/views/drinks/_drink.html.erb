@@ -7,7 +7,7 @@
         <%= image_tag "cider-can.jpg", alt: "cider photo", class: "img-thumbnail card-img-top" %>
       <% end %>
 
-      <div class="card-body text-white bg-dark">
+      <div class="card-body text-white bg-dark rounded-bottom">
         <h3 class="card-title"><%= @drink.name%></h3>
         <h5 class="text-right"><%= @drink.cidery.name %></h5>
         <p> Style: <%= @drink.style.name %>, <%= @drink.sugar_content.name %>, <%= @drink.prod_method.name %> </p>
