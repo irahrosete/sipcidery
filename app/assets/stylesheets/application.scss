@@ -96,7 +96,10 @@ a {
 
 #link {
   color: var(--light);
-  a:visited {
-    color: var(--light);
+  a {
+  color: var(--light);
+    &:visited {
+      color: var(--light);
+    }
   }
 }

@@ -4,8 +4,26 @@
 
 .landing {
   color: var(--light);
-  a:visited {
-    color: inherit;
+  a {
+    color: var(--dark);
+    &:visited {
+      color: inherit;
+    }
+    &:hover {
+      color: var(--light);
+     }
+  }
+}
+
+.landing-footer {
+  a {
+    color: var(--light);
+    &:visited {
+      color: inherit;
+    }
+    &:hover {
+      color: var(--light);
+     }
   }
 }
 
@@ -27,9 +45,9 @@
 
 .vertical-center {
   display: flex;
-  min-height: 60vh;
-  justify-content: center;
-  align-items: end;
+  min-height: 60vh !important;
+  justify-content: center !important;
+  align-items: end !important;
 }
 
 .footer {
