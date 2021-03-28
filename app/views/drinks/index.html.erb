@@ -2,9 +2,9 @@
   <h1>CiDERs</h1>
 </div>
 
-<div class="row row-cols-xs-2 row-cols-md-3 row-cols-lg-5">
+<div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3">
   <% @drinks.each do |drink| %>
-    <div class="col mb-4">
+    <div class="col mb-1">
       <div class="card shadow-lg bg-body rounded h-100 w-auto">
         <% if drink.photo.attached? %>
           <%= image_tag drink.photo, alt: "cider photo", class: "img-thumbnail card-img-top" %>

@@ -4,12 +4,12 @@
   <%= link_to 'New CiDERY', new_cidery_path, class: "btn btn-outline-dark btn-default-inverse" if can? :create, @cidery %>
 </div>
 
-<div class="row row-cols-xs-2 row-cols-md-3 row-cols-lg-5">
+<div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3">
   <% @cideries.each do |cidery| %>
     <%# exclude dummy cidery with id 0. Used to seed first cidery %>
     <% if cidery.id > 0 %>
-      <div class="col mb-4">
-        <div class="card h-100 w-auto shadow-lg bg-body rounded" >
+      <div class="col mb-1">
+        <div class="card h-100 shadow-lg bg-body rounded" >
           <% if cidery.logo.attached? %>
             <%= image_tag cidery.logo, alt: "cidery logo", class: "img-thumbnail card-img-top" %>
             <% else %>
