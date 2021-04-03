@@ -3,15 +3,12 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .landing {
-  color: var(--light);
+  color: var(--dark);
   a {
     color: var(--dark);
     &:visited {
       color: inherit;
     }
-    &:hover {
-      color: var(--light);
-     }
   }
 }
 
