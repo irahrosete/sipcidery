@@ -101,7 +101,7 @@ So that I can assign roles and cidery to representatives.<br>
 ![Sip user interface](./docs/SiP-ss07.jpg)
 
 ## Tech Stack
-<img src="https://img.icons8.com/fluent/48/000000/ruby-programming-language.png"/> ![ruby on rails logo](./docs/icon_rubyonrails.png) <img src="https://img.icons8.com/color/48/000000/html-5.png"/> <img src="https://img.icons8.com/color/48/000000/css3.png"/> <img src="https://img.icons8.com/color/48/000000/sass.png"/> <img src="https://img.icons8.com/color/48/000000/bootstrap.png"/> <img src="https://img.icons8.com/color/48/000000/amazon-web-services.png"/> <img src="https://img.icons8.com/color/48/000000/amazon-s3.png"/> <img src="https://img.icons8.com/color/48/000000/heroku.png"/> <img src="https://img.icons8.com/color/48/000000/postgreesql.png"/> ![balsamiq logo](./docs/icon_balsamiq.png) ![balsamiq logo](./docs/icon_vs-code-48.png)
+<img src="https://img.icons8.com/fluent/48/000000/ruby-programming-language.png"/> ![ruby on rails logo](./docs/icon_rubyonrails.png) <img src="https://img.icons8.com/color/48/000000/html-5.png"/> <img src="https://img.icons8.com/color/48/000000/css3.png"/> <img src="https://img.icons8.com/color/48/000000/sass.png"/> <img src="https://img.icons8.com/color/48/000000/bootstrap.png"/> <img src="https://img.icons8.com/color/48/000000/amazon-web-services.png"/> <img src="https://img.icons8.com/color/48/000000/amazon-s3.png"/> <img src="https://img.icons8.com/color/48/000000/heroku.png"/> <img src="https://img.icons8.com/color/48/000000/postgreesql.png"/> ![balsamiq logo](./docs/icon_balsamiq.PNG) ![vs code logo](./docs/icon_vs-code-48.png)
 <img src="https://img.icons8.com/color/48/000000/git.png"/> <img src="https://img.icons8.com/ios-filled/50/000000/github-2.png"/>
 
 ## Components
@@ -328,11 +328,11 @@ The app was deployed to Heroku early in the development stage and continuous dep
 ## Setup
 When installing this application locally, make sure you have Ruby installed. Run `ruby -v` from your terminal to check if you have Ruby already installed. If not, follow this [Ruby installation guide](https://www.ruby-lang.org/en/documentation/installation/) on how to install Ruby on your operating system.
 
-Next, make sure Rails and Bundler are installed. To check if they are, run `rails -v` and `bundler -v`. If not, run the following in your terminal:
-`gem install rails`
+Next, make sure Rails and Bundler are installed. To check if they are, run `rails -v` and `bundler -v`. If not, run the following in your terminal:<br>
+`gem install rails`<br>
 `gem install bundler`
 
-Also make sure that PostgreSQL is installed and running. If not, follow these instructions for [PostgreSQL installation](http://postgresguide.com/setup/install.html). Run `psql` to check that everything installed correctly. For Windows, you may need to run `sudo service postgresql start` to run PostgreSQL.
+Also make sure that PostgreSQL is installed and running. If not, follow these instructions for [PostgreSQL installation](http://postgresguide.com/setup/install.html). Run `psql` to check that everything installed correctly. For Windows, you may need to run `sudo service postgresql start` from your terminal to run PostgreSQL.
 
 Finally, follow the below instructions from your terminal:
 1. Clone this github repo.<br>
